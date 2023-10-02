@@ -1,6 +1,12 @@
 import { useState } from "react";
 export default function Produto(props){
     const [quantidade, setQuantidade] = useState(1);
+
+    function AdicionarAoCarrinho(e){
+        const produto=e.currentTarget;
+        props.adicionar(produto);
+    }
+
     return(
         <div style={{
             width: '200px',
@@ -64,7 +70,7 @@ export default function Produto(props){
                     min={1}/>
             </div>
             <div id='botao-comprar'>
-                <button 
+                <button onClick={AdicionarAoCarrinho}
                     style={{
                         backgroundColor: 'rgb(255,60,60)',
                         color: 'white',
