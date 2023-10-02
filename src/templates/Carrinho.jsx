@@ -3,6 +3,7 @@ import Produto from "./Produto";
 export default function Carrinho(props) {
     const [ListaCarrinho, setListaCarrinho] = useState(JSON.parse(localStorage.getItem("listaCarrinho")) || []);
     const [ativaTabela, setAtivaTabela] = useState(false);
+    //pro commit
     
     function adicionar(produto){
         setListaCarrinho([...ListaCarrinho, produto]);
